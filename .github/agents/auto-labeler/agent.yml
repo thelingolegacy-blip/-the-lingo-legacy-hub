@@ -1,0 +1,19 @@
+name: "auto-labeler"
+id: auto-labeler
+description: "Label pull requests based on file paths changed"
+triggers:
+  - type: pull_request
+    events: [opened, synchronize]
+permissions:
+  pull_requests: write
+  contents: read
+secrets:
+  - name: GITHUB_TOKEN
+runtime:
+  type: docker
+  image: ghcr.io/thelingolegacy-blip/agent-runtime:latest
+  entrypoint: /usr/local/bin/run-agent.sh
+inputs:
+  mapping_file:
+    type: path
+    default: .github/label-mapping.yml
