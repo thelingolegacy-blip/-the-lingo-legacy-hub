@@ -1,0 +1,9 @@
+routes:
+  - pattern: "src/**/*.py"
+    labels: ["python"]
+  - pattern: "docs/**"
+    labels: ["documentation"]
+  - pattern: "package.json"
+    labels: ["node"]
+  - pattern: "*.md"
+    labels: ["documentation"]
