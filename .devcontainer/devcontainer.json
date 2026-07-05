@@ -1,0 +1,20 @@
+{
+  "name": "Node + Python Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "18" },
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.11" }
+  },
+  "extensions": [
+    "ms-vscode.cpptools",
+    "eamodio.gitlens",
+    "github.copilot",
+    "ms-python.python"
+  ],
+  "forwardPorts": [3000, 8000],
+  "postCreateCommand": "npm install || true && pip install -r requirements.txt || true",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "remoteUser": "vscode"
+}
